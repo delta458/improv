@@ -1,0 +1,28 @@
+@(eventsList: ArrayList[Event]) @main("Improv Vienna Events!") {
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Beschreibung</th>
+		<th>Art</th>
+		<th>Datum</th>
+		<th>Ort</th>
+		<th>Gruppe/n</th>
+		<th>Eintritt</th>
+	</tr>
+	@for(event<-eventsList) {
+
+	<tr>
+		<td>@event.getName</td>
+		<td>@event.getDescription</td>
+		<td>@event.getType</td>
+		<td>@event.getDate</td>
+		<td>@event.getLocation</td>
+		<td>@for(group<-event.getGroups) { @group.getName <span>-</span> }</td>
+		<td>@event.getEntrance</td>
+
+	</tr>
+	}
+
+</table>
+}
+
