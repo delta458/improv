@@ -1,14 +1,23 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import play.data.validation.Constraints.Required;
+
 /**
  * Represents and impro player.
  * @author Ifraimov David
  *
  */
+@Entity
 public class Player {
 
+	@Required
 	private String firstName;
+	@Required
 	private String lastName;
+	@Id
 	private String email;
 	//TODO Profile Pic
 	

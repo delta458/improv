@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
@@ -21,7 +22,7 @@ public class Groupe extends Model {
 	
 	@Required
 	private String password;
-	
+	@OneToMany
 	private ArrayList<Player> members;
 	//TODO Logo
 
